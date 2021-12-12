@@ -1,4 +1,4 @@
-# conways-playground
+# Conway's Game of Life Playground
 Go playground for Conway's famous Game of Life
 
 # Example commands
