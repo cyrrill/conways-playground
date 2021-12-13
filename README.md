@@ -33,6 +33,8 @@ How each cell behaves is entirely algorithmic and described in the following rul
 
 This program implementation has some unique features which differntiate it from the classic version.
 
+- Music: This program uses a sinosoid funtion based on the board state and count to generate some musical notes to add some flare :)
+
 - Scale: Users can selct a variety of render zooms for their world: `macro`, `large`, `default`, `small`, `micro` 
 
 - Rain:
