@@ -1,10 +1,11 @@
 package main
 
-// Con
+// Conway's Game of Life Playground
+// ********************************
+//  https://en.wikipedia.org/wiki/Conway%27s_Game_of_Life
 //
-//
-//
-//
+//	Sample executions to try:
+//  *************************
 // ./conways-playground -init=40000 -delay=100 -rain=0 -scale=micro
 // ./conways-playground -init=10000 -delay=0 -rain=0 -scale=small
 // ./conways-playground -seed=copper -init=0 -delay=100 -rain=0 -interval=0 -scale=large
