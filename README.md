@@ -33,11 +33,13 @@ How each cell behaves is entirely algorithmic and described in the following rul
 
 This program implementation has some unique features which differntiate it from the classic version.
 
-- Rain
+- Scale: Users can selct a variety of render zooms for their world: `macro`, `large`, `default`, `small`, `micro` 
+
+- Rain:
 Users can optionally choose to add some stochastic progression, by defining the amount and interval for particles added to the board. 
 For example:  `-rain=20 -interval=10` will add 20 random cells every 10 generation frames.
 
-- Initial seed
+- Initial seed: 
 Users can optionally select to begin the program using a predefined seed
 
 Example seen here is known as a "Copperhead" and can be summoned with the `-seed=copper` flag. The other known seeds are:
