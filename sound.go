@@ -13,13 +13,12 @@ import (
 )
 
 var (
+	otoContext      *oto.Context
+	players         []oto.Player
 	sampleRate      = 44100
 	channelNum      = 2
 	bitDepthInBytes = 2
-
-	otoContext *oto.Context
-	ready chan struct{}
-	players []oto.Player
+	ready           chan struct{}
 )
 
 type SineWave struct {
@@ -30,6 +29,9 @@ type SineWave struct {
 	remaining []byte
 }
 
+func initSound() {
+	otoContext, ready, err = oto.NewContext(sampleRate, channelNum, bitDepthInBytes)
+}
 
 func algoSound(totalDots int) {
 	var numerator int
@@ -46,13 +48,38 @@ func algoSound(totalDots int) {
 		counting = totalDots
 	}
 
-
 	multiple := (numerator / 2000) + 1
-	freq := float64(counting / multiple) * math.Sin(float64(totalDots))
+	freq := float64(counting/multiple) * math.Sin(float64(totalDots))
 
-	if totalDots % 3 == 0 {
+	if totalDots%3 == 0 {
 		playSound(freq)
 	}
+}
+
+func playSound(freq float64) error {
+	if err != nil {
+		return err
+	}
+	<-ready
+
+	var m sync.Mutex
+	go func() {
+		p := play(otoContext, freq, time.Duration(1000)*time.Millisecond)
+		m.Lock()
+		players = append(players, p)
+		m.Unlock()
+	}()
+
+	// Pin the players not to GC the players.
+	runtime.KeepAlive(players)
+
+	return nil
+}
+
+func play(context *oto.Context, freq float64, duration time.Duration) oto.Player {
+	p := context.NewPlayer(NewSineWave(freq, duration))
+	p.Play()
+	return p
 }
 
 func NewSineWave(freq float64, duration time.Duration) *SineWave {
@@ -126,34 +153,4 @@ func (s *SineWave) Read(buf []byte) (int, error) {
 		return n, io.EOF
 	}
 	return n, nil
-}
-
-func play(context *oto.Context, freq float64, duration time.Duration) oto.Player {
-	p := context.NewPlayer(NewSineWave(freq, duration))
-	p.Play()
-	return p
-}
-
-func initSound() {
-	otoContext, ready, err = oto.NewContext(sampleRate, channelNum, bitDepthInBytes)
-}
-
-func playSound(freq float64) error {
-	if err != nil {
-		return err
-	}
-	<-ready
-
-	var m sync.Mutex
-	go func() {
-		p := play(otoContext, freq, time.Duration(1000) * time.Millisecond)
-		m.Lock()
-		players = append(players, p)
-		m.Unlock()
-	}()
-
-	// Pin the players not to GC the players.
-	runtime.KeepAlive(players)
-
-	return nil
 }

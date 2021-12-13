@@ -6,7 +6,7 @@ import (
 )
 
 var (
-	seed string
+	seed       string
 	randomSeed int
 )
 
@@ -34,7 +34,7 @@ func readInputs() {
 
 	scale := scales[*scaleFlag]
 	B = scale.B
-	Bm := B/4
+	Bm := B / 4
 	Vi = 0 + Bm
 	Vm = B - Bm
 	tileSize = scale.tileSize
