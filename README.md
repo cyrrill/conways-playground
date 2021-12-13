@@ -3,7 +3,7 @@
 #### Video Demo:
 
 #### Description:
-Go playground for Conway's famous Game of Life
+Go playground for [Conway's famous Game of Life](https://en.wikipedia.org/wiki/Conway%27s_Game_of_Life)
 
 This programis a cellular automata specifically a B3/S23 variant, based on John Conway's Game of Life first published
 in Scientific American by Marvin Gardener in 1970. Ever since, this algorithm and its derivatives have set the stage
@@ -87,6 +87,11 @@ Usage of ./conways-playground:
 ./conways-playground -seed=glider -init=10000 -delay=100 -rain=10 -interval=50 -scale=small -sharp
 ./conways-playground -seed=glider -init=53000 -delay=50 -rain=20 -scale=micro -sharp
 ```
+#### Credit
+Special thanks to [@hajimehoshi](https://github.com/hajimehoshi/) for the [Ebiten](https://github.com/hajimehoshi/ebiten) and [Oto](https://github.com/hajimehoshi/oto) libraries, which provide gameplay and sound instrumentation to the application.
+The sound code in this program is largely based on their implementation.
+
+
 
 #### Screenshots
 ![conway](https://user-images.githubusercontent.com/2376084/145700265-78212588-cbfe-4f20-863a-1c0d54d3aab6.png)
