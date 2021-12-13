@@ -77,7 +77,9 @@ func (g *ConwaysGame) Draw(screen *ebiten.Image) {
 	}
 
 	// Play note based on board state
-	algoSound(totalDots)
+	if sound {
+		algoSound(totalDots)
+	}
 }
 
 func (g *ConwaysGame) Layout(outsideWidth, outsideHeight int) (screenWidth, screenHeight int) {

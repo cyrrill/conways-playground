@@ -35,19 +35,19 @@ This program implementation has some unique features which differntiate it from 
 
 - Music: This program uses a sinosoid funtion based on the board state and count to generate some musical notes to add some flare :)
 
-- Scale: Users can selct a variety of render zooms for their world: `macro`, `large`, `default`, `small`, `micro` 
+- Scale: Users can selct a variety of render zooms for their world: `macro`, `large`, `default`, `small`, `micro`
 
 - Rain:
-Users can optionally choose to add some stochastic progression, by defining the amount and interval for particles added to the board. 
+Users can optionally choose to add some stochastic progression, by defining the amount and interval for particles added to the board.
 For example:  `-rain=20 -interval=10` will add 20 random cells every 10 generation frames.
 
-- Initial seed: 
+- Initial seed:
 Users can optionally select to begin the program using a predefined seed
 
 Example seen here is known as a "Copperhead" and can be summoned with the `-seed=copper` flag. The other known seeds are:
-1. blinker : Blinker 
+1. blinker : Blinker
 2. toad    : Toad
-3. glider  : Glider "Spaceship" 
+3. glider  : Glider "Spaceship"
 4. copper  : Copperhead
 5. gosper  : Gosper Gun
 
@@ -75,6 +75,8 @@ Usage of ./conways-playground:
     	A known seed: blinker, copperhead, toad, glider, gosper
   -sharp
     	Sharp mode disables rendering of tiles with less than 2 neighbors
+  -sound
+        Play some algorthmic sound with rendering
 ```
 
 #### Example commands

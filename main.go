@@ -73,6 +73,8 @@ var (
 	// Loads image from file
 	background *ebiten.Image
 	err        error
+
+	sound = false
 )
 
 // Initialize game state

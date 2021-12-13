@@ -29,6 +29,8 @@ func readInputs() {
 	// Set milliseconds of delay in render
 	delayFlag := flag.Int("delay", 200, "Milliseconds per frame delay")
 
+	soundFlag := flag.Bool("sound", false, "Play some algorthmic sound with rendering")
+
 	flag.Parse()
 	fmt.Printf("Seed: %s, Rain: %d, Delay: %d, Init: %d\n", *seedFlag, *rainFlag, *delayFlag, *initFlag)
 
@@ -47,4 +49,5 @@ func readInputs() {
 	rainInterval = *rainIntervalFlag
 	sharp = *sharpFlag
 	delay = *delayFlag
+	sound = *soundFlag
 }
