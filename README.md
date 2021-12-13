@@ -19,6 +19,7 @@ Every cell can be evaluated to find its "neighbors", or proximally adjacent cell
 [Moore neighborhood algorith](https://en.wikipedia.org/wiki/Moore_neighborhood).
 Each iteration of the game requires the calculation for each cell, which determines the rendering for the next generation.
 How each cell behaves is entirely algorithmic and described in the following rules
+
 <img src="https://user-images.githubusercontent.com/2376084/145755988-9806cfa4-724d-40ce-aaff-ef750ba5864b.png" width="200" />
 
 ###### Rules (B2/S23)
@@ -39,6 +40,17 @@ For example:  `-rain=20 -interval=10` will add 20 random cells every 10 generati
 - Initial seed
 Users can optionally select to begin the program using a predefined seed
 
+Example seen here is known as a "Copperhead" and can be summoned with the `-seed=copper` flag. The other known seeds are:
+1. blinker : Blinker 
+2. toad    : Toad
+3. glider  : Glider "Spaceship" 
+4. copper  : Copperhead
+5. gosper  : Gosper Gun
+
+
+<img src="https://user-images.githubusercontent.com/2376084/145757037-f3f51561-4161-4ecb-9f59-e4c28271fbba.png" width="200" />
+
+
 - Initial random cells
 
 Here are the full list of runtime options which can be set:
@@ -56,7 +68,7 @@ Usage of ./conways-playground:
   -scale string
     	Scale for board: macro, large, default, small, micro (default "default")
   -seed string
-    	A known seed: blinker, toad, glider
+    	A known seed: blinker, copperhead, toad, glider, gosper
   -sharp
     	Sharp mode disables rendering of tiles with less than 2 neighbors
 ```
