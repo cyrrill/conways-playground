@@ -1,8 +1,5 @@
 # Conway's Game of Life Playground
 
-#### Video Demo: 
-https://www.youtube.com/watch?v=sRSW3p0sbaM
-
 #### Description:
 Go playground for [Conway's famous Game of Life](https://en.wikipedia.org/wiki/Conway%27s_Game_of_Life)
 
